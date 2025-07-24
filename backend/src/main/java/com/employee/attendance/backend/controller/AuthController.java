@@ -21,12 +21,14 @@ public class AuthController {
     private final JwtService jwtService;
     private final AuthService authService;
 
+    // Implement for user signup
     @PostMapping("/signup")
     public ResponseEntity<EmployeeDto> register(@RequestBody EmployeeDto employeeDto) {
         EmployeeDto savedEmployeeDto = authService.register(employeeDto);
         return new ResponseEntity<>(savedEmployeeDto, HttpStatus.CREATED);
     }
 
+    // Implement for user login
     @PostMapping("/login")
     public ResponseEntity<LoginResDto> authenticate(@RequestBody AuthReqDto authReqDto) {
         UserDetails authenticatedUser = authService.authenticate(authReqDto);
