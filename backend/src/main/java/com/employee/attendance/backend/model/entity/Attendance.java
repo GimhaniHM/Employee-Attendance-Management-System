@@ -29,7 +29,7 @@ public class Attendance {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime checkInTime;
 
-    @Column(name = "check_out_time", nullable = false)
+    @Column(name = "check_out_time", nullable = true)
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime checkOutTime;
 

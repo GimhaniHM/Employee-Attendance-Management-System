@@ -20,15 +20,6 @@ import java.util.List;
 public class EmployeeController {
     private EmployeeService employeeService;
 
-//    // Create employee REST API
-//    @PreAuthorize("hasAnyRole('ADMIN')")
-//    @PostMapping
-//    public ResponseEntity<EmployeeDto> createEmployee(@RequestBody EmployeeDto employeeDto) {
-//        EmployeeDto savedEmployee = employeeService.createEmployee(employeeDto);
-//
-//        return new ResponseEntity<>(savedEmployee,HttpStatus.CREATED);
-//    }
-
     // Get employee REST API by id
     @PreAuthorize("hasAnyRole('ADMIN', 'EMPLOYEE')")
     @GetMapping("{id}")
